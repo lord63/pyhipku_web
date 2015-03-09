@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from random import randint
+import random
 
 from flask import Flask, request, render_template, url_for, redirect
 from pyhipku import encode
@@ -25,7 +25,12 @@ def get_ip():
 
 @app.route('/random')
 def random_ip():
-    random_ip = '.'.join(map(str, [randint(0, 255) for _ in range(4)]))
+    if random.random() < 0.5:
+        random_ip = '.'.join(map(str,
+                                 [random.randint(0, 255) for _ in range(4)]))
+    else:
+        random_ip = ':'.join('{0:x}'.format(random.randint(0,2**16-1))
+                                            for _ in range(8))
     return redirect(url_for('index', current_ip=random_ip))
 
 
