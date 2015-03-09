@@ -52,7 +52,9 @@
             <div class="inner">
               <p>
                 Your IP: <a href="{{ url_for('index', current_ip=your_ip) }}">{{ your_ip }}</a>
+                {% if your_ip != current_ip%}
                 Current IP: <a href="{{ url_for('index', current_ip=current_ip) }}">{{ current_ip }}</a><br/>
+                {% endif %}
               </p>
             </div>
           </div>
