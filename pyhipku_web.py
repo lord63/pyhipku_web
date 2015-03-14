@@ -14,10 +14,9 @@ app = Flask(__name__)
 def index(current_ip):
     your_ip = request.remote_addr
     try:
-        lines = encode(current_ip).split('\n')
+        lines = encode(current_ip).strip().split('\n')
     except ValueError:
         abort(400)
-    lines = encode(current_ip).split('\n')
     return render_template('cover.html', lines=lines, your_ip=your_ip,
                            current_ip=current_ip)
 
@@ -25,7 +24,6 @@ def index(current_ip):
 @app.errorhandler(400)
 def bad_requests(error):
     return render_template('cover.html', error=True), 400
-
 
 
 @app.route('/')
