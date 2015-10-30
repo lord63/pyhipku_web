@@ -1,0 +1,1 @@
+web: gunicorn pyhipku_web:app
