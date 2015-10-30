@@ -1,0 +1,7 @@
+{
+  "name": "pyhipku_web",
+  "description": "Encode any IP address as haiku.",
+  "repository": "https://github.com/lord63/pyhipku_web",
+  "website": "https://github.com/lord63/pyhipku_web",
+  "keywords": ["ip address", "haiku", "python", "flask"]
+}
