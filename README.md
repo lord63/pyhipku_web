@@ -2,6 +2,8 @@
 
 [![Build Status][1]][2]
 
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 This is the source code the web page.
 
 Use bootstrap [cover template][], color theme is from [uiGradients][].
