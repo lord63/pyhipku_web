@@ -28,7 +28,8 @@ def bad_requests(error):
 
 @app.route('/')
 def get_ip():
-    return redirect(url_for('index', current_ip=request.remote_addr))
+    current_ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+    return redirect(url_for('index', current_ip=current_ip))
 
 
 @app.route('/random')
